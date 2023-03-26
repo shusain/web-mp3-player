@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+#player {
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+audio {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#playlist-container {
+  max-height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#playlist {
+  width: 100%;
+}
+
+.track {
+  cursor: pointer;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+.track:hover {
+  background-color: #e0e0e0;
+}
+
+#visualizer {
+  width: 100%;
+  height: 100px;
+}
