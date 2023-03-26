@@ -47,11 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function updateMarqueeText(text) {
+    const marquee = document.getElementById('now-playing');
+    marquee.textContent = text;
+  }
+
   audio.addEventListener('play', () => {
     initAudioContext();
   });
-
-  fetch('/tracks')
+ fetch('/tracks')
     .then((response) => response.json())
     .then((tracks) => {
       tracks.forEach((track) => {
@@ -60,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         trackDiv.classList.add('track');
         trackDiv.addEventListener('click', () => {
           audio.src = `/tracks/${encodeURIComponent(track.filename)}`;
+          updateMarqueeText(`Now Playing: ${track.title}`);
           audio.play();
         });
         playlist.appendChild(trackDiv);
